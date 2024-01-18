@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+</head>
+<body>
+    <h1>Fake News Detection</h1>
+    <form action="/predict" method="post">
+        <label for="news_text">Enter News Text:</label><br>
+        <textarea name="news_text" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_LR and prediction_SVN %}
+        <p>News Text: {{ news_text }}</p>
+        <p>Prediction LR: {{ prediction_LR }}</p>
+        <p>Prediction SVN: {{ prediction_SVN }}</p>
+        <p>Prediction NN: {{ pred_NN }}</p>
+    {% endif %}
+</body>
+</html>
